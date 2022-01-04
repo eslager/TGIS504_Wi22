@@ -11,11 +11,11 @@ Thus far in the program, we've been making our interactive maps with Leaflet. An
 * how to add map elements like clickable pop-ups and a legend
 * working with 3D data (one of Mapbox's strengths compared it other web mapping frameworks)
 
-Your final outputs will include.... 
+Your final output will include a map that demonstrates your ability with all of the above, hosted on GitHub Pages. 
 
 ### Set up your workspace 
 
-Begin by creating a new folder to hold your Lab 1 work, and in a subfolder for Part A, create your HTML, JS, and CSS files using Atom and/or your computer's file management system. These files should be blank for now, and we will add content in the steps below. Add the following boilerplate code to your index.html file: 
+Begin by creating a new folder to hold your Lab 1 work, and create your HTML, JS, and CSS files using Atom and/or your computer's file management system. These files should be blank for now, and we will add content in the steps below. Add the following boilerplate code to your index.html file: 
 
 ```html
 <!DOCTYPE html>
@@ -35,22 +35,22 @@ Eventually, you will upload the files to GitHub, so you may wish to create a rep
 
 The basic steps for adding a map to a web page are very similar between Leaflet and Mapbox: 	
 
-1. Include links to the Mapbox libraries in the <head> of your HTML file;
+1. Include links to the Mapbox libraries in the `<head>` of your HTML file;
 
-2. Create a <div> to hold your map, and set some basic style parameters for it; 
+2. Create a `<div>` to hold your map, and set some basic style parameters for it; 
 3. Use the methods built into the Mapbox JS library to initialized the map, add basemap tiles, and set the initial center and zoom. 
 
-Begin by adding the following links to the Mapbox libraries in your HTML <head>. Note we are using a CDN, as usual, to host the libraries:
+Begin by adding the following links to the Mapbox libraries in your HTML `<head>`. Note we are using a CDN, as usual, to host the libraries:
 
 ```html
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
 ```
 
-While you're at it, add links to your own CSS stylesheet. Next, complete the following: 
+While you're at it, add a link to your own CSS stylesheet. Next, complete the following: 
 
-* in the body of your HTML file, create a <div> element with `id` set to 'map'
-* still in the HTML body, add a link to your JS file below where you declare the map <div> 
+* in the body of your HTML file, create a `<div>` element with `id` set to 'map'
+* still in the HTML body, add a link to your JS file below where you declare the map `<div>` 
 * in your CSS stylesheet, set the dimensions of your `map` div to `width: auto;` and `height: 98vh` (consult CSS reference documentation if you've forgotten the id selector or other CSS syntax over Winter break!)
 * In your JS file, include the following:
 
@@ -66,7 +66,7 @@ zoom: 9 // starting zoom
 });
 ```
 
-Notice a few things about this last bit of JavaScript code: 
+Notice a few things about this JavaScript code: 
 
 1. You must replace `{accessToken}` with your own Mapbox access token. Retrieve this from your Mapbox account online and make the replacement now. 
 2. We're using `const` instead of `var` (which we tended to use with Leaflet) for the `map` declaration when we initialize the map. We've discussed the difference between these before, but remember that they are functionally similar. Mapbox used to use `var` in its tutorials but has recently switched to `const`, matching more common JS best practices. For our purposes, either is generally fine, but using `var` can sometimes result in unintentional bugs, because `var` values can be redefined, while `const` values cannot. For more information, [see this link](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/). 
@@ -75,7 +75,7 @@ Notice a few things about this last bit of JavaScript code:
    * Style urls can be to default [Mapbox styles](https://docs.mapbox.com/api/maps/styles/#mapbox-styles) or any custom styles you've created in Mapbox Studio. 
    * Note that the coordinates for the map center are listed in LONGITUDE, LATITUDE order, and, as usual, they are specified as decimal degrees in the WGS84 unprojected coordinate system. While there are exceptions, when working with Mapbox, you should format coordinates as LNG, LAT, not the more familiar LAT,LNG. [More info here](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat). 
    * Documentation for the Zoom level (which can rage from 0-22) is [available here](https://docs.mapbox.com/help/glossary/zoom-level/).
-5. Leave the `pitch` and `bearing`parameters commented out for now. We'll come back to that in Step 4. 
+5. Leave the `pitch` and `bearing` parameters commented out for now. We'll come back to that in Step 4. 
 
 Save all your changes, start your Atom live server (or open your index file in a browser) and preview the changes. You should see a map filling most of your screen, centered on Big Bend National Park, with the Mapbox satellite basemap. If you don't see this, check the JS console and examine your code to identify and fix any typos or other issues before moving on. 
 
@@ -85,7 +85,7 @@ The process for adding GeoJSON data to a map with Mapbox is similar to that in L
 
 We'll be adding two layers, one that shows the boundary of Big Bend National Park, and one that shows hiking trails in the park. Test your data-finding skills by searching the Internet to find these files yourself (they are both available already formatted as GeoJSONs). If you've searched and given up, see the end of these instructions for the links directly to the sources. 
 
-Save these in your lab folder (I recommend creating a 'data' subfolder), as you will host a copy of the data locally for this lab. Examine the files in Atom and note that the boundary file contains one GeoJSON feature of type Polygon, while the trails file contains many features of type MultiLineString. The features in both files contain numerous non-spatial properties, like the names and lengths of the hiking trails. Quickly test your ability to read a GeoJSON file: What is the name of the first feature listed in the Trails GeoJSON? (See the end of these instructions for the answer.)
+Save these in your lab folder (I recommend creating a 'data' subfolder). You will host a copy of the data locally for this lab. Examine the files in Atom and note that the boundary file contains one GeoJSON feature of type Polygon, while the trails file contains many features of type MultiLineString. The features in both files contain numerous non-spatial properties, like the names and lengths of the hiking trails. Quickly test your ability to read a GeoJSON file: What is the name of the first feature listed in the Trails GeoJSON? (See the end of these instructions for the answer.)
 
 Next, we'll add an event listener that will execute a function when the map has finished loading. Then, we'll write the function that will add the data and then display it as a layer on the map. First, the listener. Copy the following at the bottom of your JS scripts file: 
 
@@ -118,7 +118,7 @@ The area between the curly brackets `{ }` is where we'll add the next bit of cod
     });
 ```
 
-Save these changes and preview the map. You should now see the park trails layer, displaying as a thick red lines. (If you don't, you may need to change the URL for the data in the `map.addSource` section of the code, as explained in the commented out code.) As explained before, there are two chunks of code here, each utilizing a method that is built into the Mapbox GL JS library: the first loads the data from the specified location (URL), and the second adds that data as a layer to the map. We name the source `'trails'` in the first chunk of code so that we can reference it in the second chunk of code. We name the layer `'trails-layer'` so that we can reference it later to do something like add it to a legend, or add pop-ups, etc. 
+Save these changes and preview the map. You should now see the park trails layer, displaying as thick red lines. (If you don't, you may need to change the URL for the data in the `map.addSource` section of the code, as explained in the commented out code.) As explained before, there are two chunks of code here, each utilizing a method that is built into the Mapbox GL JS library: the first loads the data from the specified location (a URL), and the second adds that data as a layer to the map. We name the source `'trails'` in the first chunk of code so that we can reference it in the second chunk of code. We name the layer `'trails-layer'` so that we can reference it later to do things like add pop-ups, etc. 
 
 In the `map.addLayer` section of the code, we specify that this data should be displayed as the line type. Other layer types that Mapbox allows include "fill" (polygon), "symbol" (icon), "circle" (circle marker), "heatmap", "fill-extrusion" (3D shapes), "raster", "background", and "sky". You can [read more about these types here](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#type). We also use the `'paint'` property to add styling to the layer. Styling options vary according to data type. Find [the options for styling lines with 'paint' here](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#line), and use the menu on the right side of the screen to see the options for other data types. 
 
@@ -193,14 +193,14 @@ A piece of documentation that might help is [this example from Mapbox](https://d
 
 #### 3.2 Legend
 
-Building a legend in Mapbox GL JS is similar to doing so in Leaflet, which is to say, annoyingly complicated. 
+Building a legend in Mapbox GL JS is similar to doing so in Leaflet, which is to say, more complicated that it feels like it ought to be.  
 
 There are two main components to this, which happen in the HTML file and the CSS file: 
 
-1. Create a <div> in the HTML and fill it with the appropriate content
+1. Create a `<div>` in the HTML and fill it with the appropriate content
 2. Style the legend div in CSS to ensure it is readable and looks professional
 
-Let's start with the HTML. In your index, copy the following below the 'map' <div>: 
+Let's start with the HTML. In your index, copy the following below the 'map' `<div>`: 
 
 ```html
     <div id='legend'>
@@ -214,7 +214,7 @@ Let's start with the HTML. In your index, copy the following below the 'map' <di
     </div>
 ```
 
-This will add some content below the map. We'll adjust its placement with CSS in a moment. For now, notice that we've created a div to hold the legend, and included a title and an unordered list of legend items inside that div. The <hr> elements stands for "horizontal rule," and it is more commonly used in HTML to provide a stylistic break between text paragraphs. In the past, we've styled legends with <svg> (or "scalable vector graphics") elements, but <hr> works when we only have lines and is a bit simpler. Each <hr> element is also assigned a class, which we'll use to style the lines in the different colors of the features they represent. Next, add the following to your CSS stylesheet: 
+This will add some content below the map. We'll adjust its placement with CSS in a moment. For now, notice that we've created a div to hold the legend, and included a title and an unordered list of legend items inside that div. The `<hr>` element stands for "horizontal rule," and it is more commonly used in HTML to provide a stylistic break between text paragraphs. In the past, we've styled legends with `<svg>` (or "scalable vector graphics") elements, but `<hr>` works when we only have lines and is a bit simpler. Each `<hr>` element is also assigned a class, which we'll use to style the lines in the different colors of the features they represent. Next, add the following to your CSS stylesheet: 
 
 ```css
 #legend {
@@ -263,18 +263,18 @@ margin: 0 0 10px;
 }
 ```
 
-Save those changes and notice how your legend changes. It should now be located in the bottom right corner of your map, with a white background, with colored lines indicating each of the features types on the map. So how did we do this? Much of this styling should already be familiar to you, but some things warrant further explanation: 
+Save those changes and notice how your legend changes. It should now be located in the bottom right corner of your map, with a white background and colored lines indicating each of the features on the map. So how did we do this? Much of this styling should already be familiar to you, but some things warrant further explanation: 
 
 * `border-radius: 3px` rounds the corners of the legend box. In Step 4, we'll add a Mapbox control that has similar rounding, so we'll style it like this to maintain visual consistency. 
 * `z-index: 1` ensures that the legend appears above the map, rather than below it. 
-* The `width` on the <hr> element defines the length of the line, while `transform: rotate(45deg)` angles it diagonally. We can adjust this to another angle if we want; be default, the line is horizontal, so 90 degrees would make it vertical, etc. 
-* Finally, we use the classes to define the colors of the lines created by the <hr> elements. 
+* The `width` on the `<hr>` element defines the length of the line, while `transform: rotate(45deg)` angles it diagonally. We can adjust this to another angle if we want; by default, the line is horizontal, so 90 degrees would make it vertical, 45 makes it diagonal, etc. 
+* Finally, we use CSS classes to define the colors of the lines created by the `<hr>` elements. 
 
 If the legend appears as expected, you may make further adjustments to it to suit your tastes, or move on to the next section. 
 
 ### Step 4: Working with 3D data
 
-Great news: I've saved the best part of this lab for last. One of the huge advantages of Mapbox GL JS version 2 (released in December 2020) is that it makes certain kinds of interactive 3D mapping easy and beautiful. In particular, it includes a built in terrain layer that models land elevation across the entire globe and can even model building heights in some locations. Data sources for the model are varied, and you can read more about [the elevation tilesets here](https://docs.mapbox.com/help/troubleshooting/access-elevation-data/). 
+Great news: I've saved the best part of this lab for last. One of the huge advantages of Mapbox GL JS version 2 (released in December 2020) is that it makes certain kinds of interactive 3D mapping easy and beautiful. In particular, it includes a built-in terrain layer that models land elevation across the entire globe and can even model building heights in some locations. Data sources for the model are varied, and you can read more about [the elevation tilesets here](https://docs.mapbox.com/help/troubleshooting/access-elevation-data/). 
 
 Since we're mapping hiking trails in a mountainous terrain, it may be fun to visualize our data in 3D, no? To achieve these, we'll add two more data layers and a control to help the user adjust their view. 
 
@@ -336,13 +336,25 @@ const navControl = new mapboxgl.NavigationControl({
 map.addControl(navControl, 'top-right');
 ```
 
-Here we create a control--named `navControl`, though you could call it something else if you wanted--that lets the user adjust zoom, bearing (the orientation of the map in relation to North), and pitch to the top-right corner of the map. Find [the documentation for this control here](https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol).
+Here we create a control--named `navControl`, though you could call it something else if you wanted--to the top-right corner of the map that lets the user adjust zoom, bearing (the orientation of the map in relation to North), and pitch. Find [the documentation for this control here](https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol).
 
- As a last step, use the Mapbox documentation to add one more control to the bottom-left corner of your map: a scale control. This will let the user see the ration of distance on the map to distance on the ground, a helpful feature when one is planning a hiking trip! Set the units to whatever measuring system you prefer. 
+As a last step, use the Mapbox documentation to add one more control to the bottom-left corner of your map: a scale control. This will let the user see the ratio of distance on the map to distance on the ground, a helpful feature when one is planning a hiking trip! Set the units to whatever measuring system you prefer. 
 
 ### What to submit
 
 Finalize your map by adjusting the initial pitch, bearing, zoom level, and center of the map in the map options, and add a title and brief explanatory text to the page. Include citations for your data, either in the explanatory text or in the [attribution control](https://docs.mapbox.com/mapbox-gl-js/api/markers/#attributioncontrol). Upload all of your files to GitHub and submit a link to your final map in the appropriate assignment dropbox on Canvas. I'll assess your work based on completeness, code organization, and customizations requested by these instructions. You do not need to submit answers to the self-assessment questions included in these instructions. (But if you've identified any gaps in your skills or understanding through the self-assessments, please reach out to ask any questions you may have!)
+
+*Checklist*
+
+* Layer showing hiking trails, visualized according to trail class
+* Layer showing the park boundary
+* Formatted, clickable pop-ups on the trails layer
+* Formatted legend
+* 3D terrain layer
+* Sky layer
+* Navigation control
+* Scale control
+* Title, explanatory text, and data attribution
 
 ### Hints, answers, etc. 
 
@@ -353,6 +365,6 @@ Finalize your map by adjusting the initial pitch, bearing, zoom level, and cente
 
 2. The name of the first trail in the trails GeoJSON: 'Chihuahuan Desert Nature Trail'
 
-3. Code for the pop-ups is below. Your line numbers do not need to match mine! You may have found a slightly different way to achieve what I've done here, and that is also just fine. Note that the section of the code that has to do with 'multiple copies of the feature' is no longer relevant in the latest version of Mapbox GL JS, though including it won't hurt anything. 
+3. Code for the pop-ups is below. Your line numbers do not need to match mine! You may have found a slightly different way to achieve what I've done here, and that is also just fine. Note that the section of the code in the Mapbox example that has to do with 'multiple copies of the feature' is no longer relevant in the latest version of Mapbox GL JS, though including it won't hurt anything. 
 
    ![Screenshot of complete pop-up code](images/code.PNG)
