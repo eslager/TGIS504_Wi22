@@ -292,7 +292,7 @@ map.on('load', function () {
    });
     map.setTerrain({"source": "mapbox-dem", "exaggeration": 1.0});
     
-}
+)};
 ```
 
 What we have here is another event listener that executes two functions to add a data source and then add the data from that source to the map as a terrain layer. Note: we could include everything except the first and last lines of code here inside the same curly brackets where we added our other map layers, but I've had you duplicate the event listener at the bottom of your code so that you can more easily keep track of what parts of the code are doing what. The `map.setTerrain` method is a new method for you, but it is very similar to the `map.addLayer` method that you used earlier. 
