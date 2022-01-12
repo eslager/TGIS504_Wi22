@@ -32,11 +32,11 @@ const map = new mapboxgl.Map({
 
 Now you should have a map centered on Tacoma, WA. Open your index in the Google Chrome browser and open Google Developer Tools. (Note: the following instructions are specific to Google Chrome, but if you prefer to test with Mozilla Firefox or another browser, you can search the Internet for how to achieve the same thing with your browser of choice. [Here](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode), for instance, are the Firefox instructions.) In the Developer Tools window, to the left of the toggle that let's you switch between 'Elements' and 'Console,' click the button that looks like an icon of a mobile phone and a tablet: 
 
-![Button screenshot](..images/mobile-button.PNG)
+![Button screenshot](images/mobile-button.PNG)
 
 This should change your view so that the map appears as it would on a mobile device. Using the menu at the top, you can change the simulated width and height of the device, throttle the responsiveness of loading times to mimic a slower mobile connection, and more. We'll use this mobile simulator to test our work throughout this lab. 
 
-![mobile simulator](..images/mobile-sim.PNG)
+![mobile simulator](images/mobile-sim.PNG)
 
 Next, let's add data for the libraries and hospitals. 
 
@@ -237,18 +237,16 @@ You should be able to achieve this with the addition of just 4 lines of code and
 - Think about where the additional line(s) of code need to be placed within your existing code.
 - Since the from and to points require coordinates, think about how to get those coordinates using variables that are already named in your code.
 
-Finally, add a title and brief explanatory text to the map to explain what it does to a potential user of the tool you've built. Cite the data sources for the library and hospitals based on the links in Step 1 of these instructions. 
+Finally, add a title and brief explanatory text to the map to explain what it does to a potential user of the tool you've built. Cite the data sources for the library and hospitals based on the links in Step 1 of these instructions. Ensure that the layout works well on both the mobile device simulator and on the desktop browswer view. 
 
 ### Submission
 
 Submit a link to your final work on Canvas. Along with the URL to the live version of your final map, submit a response to the following questions. Your answer should be a paragraph in length (~150-200 words):
 
-Browse the Turf JS documentation and the different methods it makes available. Choose one method that is familiar to you from prior GIS work you have done with desktop GIS software, such as ArcMap or QGIS.*
+Browse the Turf JS documentation and the different methods it makes available. Choose one method that is familiar to you from prior GIS work you have done with desktop GIS software, such as ArcMap or QGIS. If you are having trouble deciding on a method to examine, I suggest Buffer.
 
 1. What analysis method or task/tool did you choose?
 2. How does Turf's method of accomplishing this geospatial analysis task compare to the method you learned using desktop GIS? Do any of the inputs, parameters, or outputs of the operation differ from what you are familiar with? If so, how?
-
-*If you are having trouble deciding on a method to examine, I suggest Buffer.
 
 ### Self-assessment questions and answers
 
