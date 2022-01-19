@@ -1,4 +1,4 @@
-# Lab 2: Web mapping with projections and OpenLayers
+# Lab 3: Web mapping with projections and OpenLayers
 
 ## TGIS 504, Winter 2022, Dr. Emma Slager
 
