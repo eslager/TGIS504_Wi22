@@ -46,13 +46,17 @@ In the command line interface, navigate to the folder on your hard drive where y
 
 * Now enter the following commands: 
 
-  ```mkdir lab3 && cd lab3```
+  ```
+  mkdir lab3 && cd lab3
+  ```
 
 * This makes a directory (folder) with the `mkdir` command and names it lab3. Then with the `cd` (change directory) command, we open that new folder. 
 
 * Next, enter the following: 
 
-  ```npx create-ol-app```
+  ```
+  npx create-ol-app
+  ```
 
 * This will install the `ol` package, the main library for OpenLayers. It will also set up a development environment with additional dependencies (think of these as sub-libraries), and give you an index.html and main.js files, which will be the starting point for the application. 
 
@@ -70,7 +74,9 @@ Open the Index.html file in Atom or your preferred text editor. It should be a r
 
 Back in command line, enter
 
-```npm start```
+```
+npm start
+```
 
 This will take a brief moment, and then you should get a message that looks like this (note, my screen shots are all from a Windows OS): 
 
@@ -225,7 +231,9 @@ The final step is to put your finished product on the web so that you can submit
 
 Return to the command prompt. If you closed it between Part 1 and now, you'll have to navigate again (using the `cd` command) to your lab3 folder. Once inside the lab3 folder, enter
 
-`npm run build`
+```
+npm run build
+```
 
 This runs a module that will collect just the modules you imported, plus your web files, and package them in a `dist` (for distribution) folder that you can upload to GitHub. Find that `dist` folder inside the lab3 folder. ***Important ***: for some reason that I can't quite figure out, the geojson data file will not be copied into the dist folder. Copy and paste the nps-project.json file into the dist folder manually, then upload ONLY the files in the dist folder (plus your geojson data file) to a new GitHub repository, NOT the whole lab3 folder. 
 
