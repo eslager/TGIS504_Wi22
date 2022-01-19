@@ -147,8 +147,6 @@ layers: [
 
 After the existing TileLayer, we've added a VectorLayer. We've specified the source of that VectorLayer as the nps-project.json file, and formatted it as a GeoJson. Preview your changes on the local server, and you should now see the data on your map. 
 
-[STYLE SECTION]
-
 ### Step 4: Projection
 
 So far, OpenLayers probably feels pretty familiar to you. It's very much like Mapbox and Leaflet: a JavaScript library with a series of methods and parameters that let you display a map, add layers to the map, and (eventually) add style and interactivity to the layers. So let's move into the unfamiliar territory of working with projections in a web map. 
