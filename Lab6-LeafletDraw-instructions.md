@@ -366,4 +366,4 @@ To prepare your lab for submission, make the following adjustments:
 
 ##### Submission
 
-Upload your completed map to GitHub and submit a link to your work on Canvas. There is no write-up for Lab 3a. 
+Upload your completed map to GitHub and submit a link to your work on Canvas. There is no write-up for this lab. 
