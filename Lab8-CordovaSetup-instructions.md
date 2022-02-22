@@ -211,7 +211,7 @@ Navigate to your `hello` folder using the `cd` (change directory) command, addin
 
 Run the `cordova requirements` check again: 
 
-![requirements check screenshot](images/screenshot13.png)
+![requirements check screenshot](images/8-13.png)
 
 This time, you should get results that look like the above, noting that Java JDK, Android SDK, Android target (Virtual Device), and Gradle are all installed. 
 
