@@ -146,7 +146,7 @@ These exact steps may vary depending on the version of Windows you are running. 
 
 3. In the window that appears, click the **Environment Variables** button:
 
-   ![screenshot of Environment Variables button](images/screenshot10.png)
+   ![screenshot of Environment Variables button](images/8-10.png)
 
 4. In the **System Variables** (bottom half of the window), click 'New'
 
