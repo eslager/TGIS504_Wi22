@@ -78,7 +78,7 @@ Check that all went as expected with the following command:
 
 You should see the following:
 
-![screenshot of platform ls output](images/8-5.png)
+![screenshot of platform ls output](images/8-5.PNG)
 
 What this command did was add another sub-folder to the `hello` folder, called `platforms`, which contains a number of files that will be necessary for us to build an app for the Android platform. If we wanted to build for the iOS platform, we could also add the files needed for that, using the command `cordova platform add ios`. However, since we will only be developing for Android in this lab, we'll save space and time by not downloading the unnecessary iOS files. 
 
@@ -92,7 +92,7 @@ To check if the necessary software is already installed on your machine, run the
 
 In the very unlikely scenario that you already have all of these installed, the following will be printed to the command line interface: 
 
-![screenshot of successful requirements check results](images/8-6.png)
+![screenshot of successful requirements check results](images/8-6.PNG)
 
 More likely, however, you will need to install Java JDK, Android SDK, and Gradle. You will also have to install an Android target (device emulator), which we will do through the Android Studio software. 
 
