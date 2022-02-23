@@ -127,6 +127,8 @@ Click 'Create device'. Next, you must select the hardware model you want to emul
 Click 'Next'. On the next screen, you need to choose the system image (essentially a software version). It is important that you **select R (or below)**, as Cordova is only compatible up to Android API Level 30. With R selected, click 'Next'. You may give the device a name on this screen if you wish, or you can accept the default. Click 'Finish.' The new device should now appear in your list of Virtual Devices. Close the AVD Manager. 
 
 Check that the AVD was installed correctly by opening up the SDK Manager (three dot menu > SDK Manager or Configure > SDK Manager). You should see that Android 11.0 (R) is installed. Other versions may also be installed, and that is fine, but if Android 11.0 (API level 30) is _not_ installed, click the checkbox next to it and hit 'Apply'. Click 'OK' to confirm the change and 'Finish' after the installation completes. Close the SDK Manager and close Android Studio. 
+ 
+Note: the screenshot below shows a checkbox next to both Android 11.0 (R) and Android 10.0 (Q). Either version should work (and you are welcome to install both, though this will use extra storage space on your machine), but as R is now the latest Android version supported by Cordova, I recommend using R. 
 
 ![screenshot of SDK Manager](images/8-10.png)
 
