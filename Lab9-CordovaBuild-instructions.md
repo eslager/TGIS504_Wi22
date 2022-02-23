@@ -23,17 +23,17 @@ We begin where we left off on Lab 8. Open your command line interface, use `cd` 
 
 Enter to command `cordova build` to build the skeleton app stored in your `hello` project folder:
 
-![build command screenshot](images/captureB1.PNG)
+![build command screenshot](images/captureB1.png)
 
 The build process will take a few seconds to complete, but you should eventually get a message that reads `BUILD SUCCESSFUL`:
 
-![build success screenshot](images/captureB2.PNG)
+![build success screenshot](images/captureB2.png)
 
 Congratulations! You've built your first app with Cordova. Essentially, what Cordova has done is take the files that you wrote in HTML, JS, and CSS and packaged them as an APK (an Android Package file), which can run on Android mobile operating systems. To do this, it used the platform files you downloaded in Lab 8 using the `cordova platform add android` command, as well as the `config.xml` file created and saved to your `hello` folder when you ran the `cordova create` command, and various other methods and parameters built into the Cordova software itself. 
 
 Open Android Studio, open the Virtual Device Manager (three dot menu > Virtual Device Manager), and click the "Play" icon under 'Actions' to launch your Android Virtual Device emulator--If you have multiple devices in your AVD manager, make sure you launch the device with API v29:
 
-![AVD screenshot](images/captureB3.PNG)
+![AVD screenshot](images/captureB3.png)
 
 With the emulator launched, return to your command console and enter the following command: 
 
@@ -43,19 +43,19 @@ This time, you should receive not only a `BUILD SUCCESSFUL` message, but also an
 
 Return to the emulator window, and your screen should show the following: 
 
-![launched screen](images/captureB4.PNG)
+![launched screen](images/captureB4.png)
 
 Though there isn't much you can do with this app, it is an app! It is built from the skeleton files stored in the `www` folder inside of the `hello` project folder. 
 
 Click and hold the bottom of the screen, then pull up (similar to swiping up on a touch-screen) to see the full list of apps installed on your emulator. You should see the app name ('HelloWorld') and icon: 
 
-![icon screenshot](images/captureB5.PNG) 
+![icon screenshot](images/captureB5.png) 
 
 ### 2. Create a new Cordova project to hold your app files
 
 Now that you've built your first test app, let's move on to building a 'real' app. Create a folder to store your 9 files, and navigate to that folder using `cd`. For me, for instance, this looks like this (though the lab number has changed since I first wrote these): 
 
-![cd screenshot](images/captureB6.PNG)
+![cd screenshot](images/captureB6.png)
 
 Once in this directory, create a new Cordova project file using the `cordova create` command. the syntax for this command is as follows: 
 
@@ -71,7 +71,7 @@ cordova create dataCollection com.emmaapp Emma
 
 After the create command runs, change your directory so that you are working inside the directory you just created: 
 
-![cd new screenshot](images/captureB7.PNG)
+![cd new screenshot](images/captureB7.png)
 
 Just as we did in lab 8, we need to add the platforms that we want to build for. Again, we will use Android. Run the following command: 
 
@@ -87,7 +87,7 @@ The app you are going to build in this lab is a mobile app version of the data c
 
 In your file manager (File Explorer in Windows or Finder in MacOS), copy (*do not cut*; leave a copy of the files in the original lab 7 folder!) and paste your lab files into the `www` folder inside your newly created project directory. This will mean overwriting the existing index.html file. You do not need to worry about storing your JS file inside the JS folder, or the CSS file inside the CSS folder. Once you've copied your files, your project directory will likely look something like this (the files I just added are highlighted in blue): 
 
-![folder structure](images/captureB8.PNG)
+![folder structure](images/captureB8.png)
 
 You are now ready to build your app! 
 
@@ -103,7 +103,7 @@ First, you should download or create an icon image that you want to use for your
 
 Once you've saved your image, navigate in your file explorer to the config.xml file saved inside your project directory. Right click on this to open it in Atom: 
 
-![config screenshot](images/captureB9.PNG)
+![config screenshot](images/captureB9.png)
 
 In the config file, add the following code just above the closing `</widget>` tag, making sure to change the value of the `src` attribute to the path and file name of *your* icon: 
 
@@ -113,7 +113,7 @@ In the config file, add the following code just above the closing `</widget>` ta
 
 Save your file. Back in the command line interface, run the `cordova emulate android` command once again. Pull up from the bottom of the screen to see the list of installed apps and examine your app's icon, and it should use the image you just added. Mine, for example, looks like this: 
 
-![icon updated](images/captureB11.PNG)
+![icon updated](images/captureB11.png)
 
 ### 5. Add a splashscreen
 
@@ -138,7 +138,7 @@ cordova build --emulator
 
 This will produce an APK (Android Package file) that will likely have the name app-debug.apk. We add the --emulator specification to build a file especially optimized to run on an Android emulator, rather than an actual Android device, because that it what I will use to assess your work. The path to this file will be printed to the command line console: 
 
-![apk location screenshot](images/captureB12.PNG)
+![apk location screenshot](images/captureB12.png)
 
 You will upload this APK file to Canvas as part of your submission. In your file manager, navigate to the location specified by the pathname in the command console. Rename the file to something that includes your name, so that I can distinguish it from your peers' when I grade, and take note of where the file is saved so that you can upload the file to Canvas. 
 
