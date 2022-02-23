@@ -114,7 +114,7 @@ Visit [this page](https://developer.android.com/studio/index.html) to download a
 
 ![screenshot of SDK install](images/8-7.png)
 
-Once the install is complete, you must also install an Android Virtual Device (AVD), which is a mobile device emulator that you can use to test your work. In Android Studio, click the three vertical dot menu > 'Virtual Device Manager'. This will open an interface window where you can create virtual devices to emulate specific real-world devices--i.e. you need to choose what hardware and software your emulator will be modelled on.
+Once the install is complete, you must also install an Android Virtual Device (AVD), which is a mobile device emulator that you can use to test your work. In Android Studio, click the three vertical dot menu > 'Virtual Device Manager', or Configure > AVD Manager (the interface varies slightly between versions and OSs). This will open an interface window where you can create virtual devices to emulate specific real-world devices--i.e. you need to choose what hardware and software your emulator will be modelled on.
 
 ![Device manager screenshot](images/8-8.png)
 
@@ -124,9 +124,9 @@ Click 'Create device'. Next, you must select the hardware model you want to emul
 
 ![screenshot of hardware choice](images/8-9.png)
 
-Click 'Next'. On the next screen, you need to choose the system image (essentially a software version). It is important that you **select Q**, as Cordova is only compatible up to Android API Level 29. With Q selected, click 'Next'. You may give the device a name on this screen if you wish, or you can accept the default. Click 'Finish.' The new device should now appear in your list of Virtual Devices. Close the AVD Manager. 
+Click 'Next'. On the next screen, you need to choose the system image (essentially a software version). It is important that you **select R (or below)**, as Cordova is only compatible up to Android API Level 30. With R selected, click 'Next'. You may give the device a name on this screen if you wish, or you can accept the default. Click 'Finish.' The new device should now appear in your list of Virtual Devices. Close the AVD Manager. 
 
-Check that the AVD was installed correctly by opening up the SDK Manager (three dot menu > SDK Manager). You should see that Android 10.0 (Q) is installed. Other versions may also be installed, and that is fine, but if Android 10.0 (API level 29) is _not_ installed, click the checkbox next to it and hit 'Apply'. Click 'OK' to confirm the change and 'Finish' after the installation completes. Close the SDK Manager and close Android Studio. 
+Check that the AVD was installed correctly by opening up the SDK Manager (three dot menu > SDK Manager or Configure > SDK Manager). You should see that Android 11.0 (R) is installed. Other versions may also be installed, and that is fine, but if Android 11.0 (API level 30) is _not_ installed, click the checkbox next to it and hit 'Apply'. Click 'OK' to confirm the change and 'Finish' after the installation completes. Close the SDK Manager and close Android Studio. 
 
 ![screenshot of SDK Manager](images/8-10.png)
 
