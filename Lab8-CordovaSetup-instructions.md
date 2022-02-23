@@ -144,9 +144,7 @@ These exact steps may vary depending on the version of Windows you are running. 
 
 2. In the search bar, search for **Environment Variables** and select **Edit the system Environment Variables** from the options that appear
 
-3. In the window that appears, click the **Environment Variables** button:
-
-   ![screenshot of Environment Variables button](images/8-10.png)
+3. In the window that appears, click the **Environment Variables** button
 
 4. In the **System Variables** (bottom half of the window), click 'New'
 
