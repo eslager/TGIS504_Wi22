@@ -126,7 +126,7 @@ The basic steps for this are to:
 2. create (or download--using freely licensed images) your splashscreen assets (image files)
    * Note that you should create multiple versions of your splashscreen at different resolutions, because the devices the splashscreen may show on will have different resolutions. This is explained further in the documentation. 
    * We will also spend a little time discussing tricks for building your own splashscreen assets using open-source image editing software in class in Week 10. 
-3. update your config.xml file to link to your splashscreen assets
+3. update your config.xml file to link to your splashscreen assets--note that any code you add to the config.xml file should go inside the <widget> tags.
 
 ### 6. Build final version 
 
